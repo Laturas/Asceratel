@@ -59,19 +59,18 @@ public class ScreenManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1)) 
         {
-            checkMouseClick();
+            checkMouse2Click();
         }
         if (Input.GetMouseButtonDown(0)) 
         {
             if (!camUp || !camActivatable) {return;}
 
-            checkMouse2Click();
+            checkMouseClick();
         }
     }
 
-    void checkMouseClick()
+    void checkMouse2Click()
     {
-        //When "F" is pressed, if the camera isn't up, open it. If the camera is up, close it.
         if (!camUp) 
         {
             if (!lightBroken)
@@ -93,7 +92,7 @@ public class ScreenManager : MonoBehaviour
         GameWorldCamera.SetActive(true);
     }
 
-    void checkMouse2Click()
+    void checkMouseClick()
     {
         if (congregationScript.getCongTriggered())
         {
@@ -152,12 +151,18 @@ public class ScreenManager : MonoBehaviour
             lightManagerScript.CameraLightLevelSet(1F);
         }
         //lightManagementScript.LightsSet(true);
-        NoPostCamera.SetActive(false);
+        NoPostCamera.SetActive(true);
+        GameWorldCamera.SetActive(true);
     }
 
     public void CamUpFinished() 
     {
         camActivatable = true;
         GameWorldCamera.SetActive(false);
+    }
+
+    public void CamAwayStart()
+    {
+        GameWorldCamera.SetActive(true);
     }
 }

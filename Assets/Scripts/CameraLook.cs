@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class CameraLook : MonoBehaviour
 {
-    [SerializeField] private float Xsensitivity;
-    [SerializeField] private float Ysensitivity;
+    private float Xsensitivity;
+    private float Ysensitivity;
     [SerializeField] private SettingsScriptableObj settings;
     [SerializeField] private CameraInfoScriptableObject camInfo;
-    [SerializeField] private Transform camTransform;
 
     private float xRotation;
     private float yRotation;
     
-    // I made these public when I was dumb and didn't know the implications.
-    // I'm scared to change them now though
-    // I've grown as a person
-    public float Xrot;
-    public float Yrot;
+    private float Xrot;
+    private float Yrot;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +38,7 @@ public class CameraLook : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
 
-        camInfo.setRotValues(camTransform.rotation.eulerAngles.x);
+        camInfo.setRotValues(transform.rotation.eulerAngles.x);
     }
 
     public void SetSensitivity(float sensitive)

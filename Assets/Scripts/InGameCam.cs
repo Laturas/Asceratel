@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class InGameCam : MonoBehaviour
 {
@@ -18,12 +19,6 @@ public class InGameCam : MonoBehaviour
         LastImage = new Texture2D(CameraRT.width, CameraRT.height, CameraRT.graphicsFormat, UnityEngine.Experimental.Rendering.TextureCreationFlags.None);
         Graphics.CopyTexture(blackImage, LastImage);
         LastTakenImage.texture = blackImage;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void TakePicture()

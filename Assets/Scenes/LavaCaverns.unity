@@ -21625,7 +21625,7 @@ GameObject:
   - component: {fileID: 1476967244}
   - component: {fileID: 1476967243}
   - component: {fileID: 1476967242}
-  - component: {fileID: 1476967241}
+  - component: {fileID: 1476967245}
   m_Layer: 0
   m_Name: Amber Eyes Trigger
   m_TagString: Untagged
@@ -21633,19 +21633,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1476967241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476967240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d002769613cc69646b3260d9748158f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amberEyeAnimator: {fileID: 769450748}
 --- !u!65 &1476967242
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21682,6 +21669,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 35.989, z: 0}
+--- !u!114 &1476967245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476967240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbd0337049c7f44686bb81b9a65c4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSO: {fileID: 11400000, guid: 59e8e5b108508864baddf4a95d19c5c8, type: 2}
+  optionalGameObject: {fileID: 769450747}
 --- !u!1 &1483241150
 GameObject:
   m_ObjectHideFlags: 0

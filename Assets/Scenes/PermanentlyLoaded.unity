@@ -4009,7 +4009,7 @@ GameObject:
   - component: {fileID: 713379227}
   - component: {fileID: 713379226}
   - component: {fileID: 713379225}
-  - component: {fileID: 713379224}
+  - component: {fileID: 713379229}
   m_Layer: 0
   m_Name: Lava Caverns Loading Zone
   m_TagString: Untagged
@@ -4017,19 +4017,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &713379224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713379223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e097d90d5e22fab4fb5e57bae38bd261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  managerOfScenes: {fileID: 328020566}
 --- !u!65 &713379225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4108,6 +4095,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 28.497, z: 0}
+--- !u!114 &713379229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713379223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbd0337049c7f44686bb81b9a65c4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSO: {fileID: 11400000, guid: 59e8e5b108508864baddf4a95d19c5c8, type: 2}
+  optionalGameObject: {fileID: 328020565}
 --- !u!1 &727388772
 GameObject:
   m_ObjectHideFlags: 0
@@ -16120,7 +16121,7 @@ GameObject:
   - component: {fileID: 1837950038}
   - component: {fileID: 1837950037}
   - component: {fileID: 1837950036}
-  - component: {fileID: 1837950035}
+  - component: {fileID: 1837950040}
   m_Layer: 0
   m_Name: Graveyard Unloading Zone
   m_TagString: Untagged
@@ -16128,19 +16129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1837950035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837950034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fdbe8b1daaf815419872ae7b657a6ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  managerOfScenes: {fileID: 328020566}
 --- !u!65 &1837950036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16219,6 +16207,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -19.653, z: 0}
+--- !u!114 &1837950040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837950034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbd0337049c7f44686bb81b9a65c4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSO: {fileID: 11400000, guid: 59e8e5b108508864baddf4a95d19c5c8, type: 2}
+  optionalGameObject: {fileID: 328020565}
 --- !u!1 &1880803492
 GameObject:
   m_ObjectHideFlags: 0

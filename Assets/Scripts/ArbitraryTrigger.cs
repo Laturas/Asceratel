@@ -12,5 +12,6 @@ public class ArbitraryTrigger : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         triggerSO.triggerEntered(transform.gameObject.name, optionalGameObject);
+        Destroy(this);
     }
 }

@@ -7262,7 +7262,7 @@ GameObject:
   - component: {fileID: 1292238700}
   - component: {fileID: 1292238703}
   - component: {fileID: 1292238702}
-  - component: {fileID: 1292238701}
+  - component: {fileID: 1292238704}
   m_Layer: 0
   m_Name: Lava Door Closing Trigger
   m_TagString: Untagged
@@ -7285,19 +7285,6 @@ Transform:
   m_Father: {fileID: 310973630}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1292238701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292238699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc826fc1ee1d8e4cbe1b1c37a09e831, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lavaDoorAnimator: {fileID: 1511738635}
 --- !u!65 &1292238702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7319,6 +7306,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292238699}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1292238704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292238699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbd0337049c7f44686bb81b9a65c4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSO: {fileID: 11400000, guid: 59e8e5b108508864baddf4a95d19c5c8, type: 2}
+  optionalGameObject: {fileID: 1511738634}
 --- !u!64 &1327300917
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9041,19 +9042,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1511738636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511738634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de656943f97fb34686b38c5261126e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lavaDoorMove: {fileID: 1511738637}
 --- !u!82 &1511738637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12878,7 +12866,7 @@ GameObject:
   - component: {fileID: 2050928116}
   - component: {fileID: 2050928115}
   - component: {fileID: 2050928114}
-  - component: {fileID: 2050928113}
+  - component: {fileID: 2050928118}
   m_Layer: 0
   m_Name: Door Closing Zone
   m_TagString: Untagged
@@ -12886,19 +12874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2050928113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050928112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a5c920a6ff8e7e4ba61fd14366392be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorAnimator: {fileID: 1358147238}
 --- !u!65 &2050928114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12977,6 +12952,20 @@ Transform:
   m_Father: {fileID: 310973630}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -19.653, z: 0}
+--- !u!114 &2050928118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050928112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbd0337049c7f44686bb81b9a65c4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSO: {fileID: 11400000, guid: 59e8e5b108508864baddf4a95d19c5c8, type: 2}
+  optionalGameObject: {fileID: 1358147237}
 --- !u!1 &2057056978
 GameObject:
   m_ObjectHideFlags: 0
@@ -14643,20 +14632,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 116.57
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -108.33
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 727.26
       objectReference: {fileID: 0}
     - target: {fileID: 3076669273981140295, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: noiseMeter
       value: 
       objectReference: {fileID: 1055974535}
+    - target: {fileID: 3076669274189015102, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
+      propertyPath: m_Volume
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 3076669274189015103, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: timothy
       value: 

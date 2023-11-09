@@ -66,9 +66,9 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) {hAxis += Vector3.back;}
         if (Input.GetKey(KeyCode.A)) {vAxis += Vector3.left;}
         if (Input.GetKey(KeyCode.D)) {vAxis += Vector3.right;}
-        Vector3 direction = hAxis + vAxis;
-        moveDirection = direction;
+        
+        moveDirection = hAxis + vAxis;
 
-        return rb.transform.TransformDirection(direction);
+        return rb.transform.TransformDirection(moveDirection);
     }
 }

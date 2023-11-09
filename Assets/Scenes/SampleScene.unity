@@ -7264,7 +7264,7 @@ GameObject:
   - component: {fileID: 1292238702}
   - component: {fileID: 1292238701}
   m_Layer: 0
-  m_Name: LavaDoorClosingTrigger
+  m_Name: Lava Door Closing Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8971,15 +8971,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e00a4ec165e4a644b3177248d94f7b5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e00a4ec165e4a644b3177248d94f7b5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e00a4ec165e4a644b3177248d94f7b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2e00a4ec165e4a644b3177248d94f7b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14591,15 +14591,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272730006499, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -284.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272730006499, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 184.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272730006499, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -742.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272730006499, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14640,6 +14640,18 @@ PrefabInstance:
     - target: {fileID: 3076669272755845860, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: speederBoost
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3076669273981140295, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: noiseMeter

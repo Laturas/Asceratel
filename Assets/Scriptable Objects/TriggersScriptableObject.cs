@@ -42,6 +42,11 @@ public class TriggersScriptableObject : ScriptableObject
             case "Watchers Trigger":
                 Instantiate(passedGO);
                 break;
+            case "Sudden Stop Trigger":
+                // This is nasty in terms of performance but it only runs once.
+                Camera.main.GetComponent<CameraLook>().shakeCam();
+                passedGO.GetComponent<ElevatorSceneTrigger>().DisableElevator();
+                break;
             default:
                 break;
         }

@@ -41,4 +41,10 @@ public class ElevatorSceneTrigger : MonoBehaviour
     {
         elevatorTriggered = true;
     }
+
+    public void DisableElevator()
+    {
+        elevatorTriggered = false;
+        acceleration = 0.01f;
+    }
 }

@@ -46,4 +46,33 @@ public class CameraLook : MonoBehaviour
         Xsensitivity = sensitive;
         Ysensitivity = sensitive;
     }
+
+    public void shakeCam()
+    {
+        StartCoroutine(camShake());
+    }
+
+    IEnumerator camShake()
+    {
+        Vector3 oldPos = transform.position;
+
+        float shakeMagnitude = 0.5f;
+
+        while (shakeMagnitude > 0f)
+        {
+            float x = Random.Range(-1f, 1f) * shakeMagnitude;
+            float y = Random.Range(-1f, 1f) * shakeMagnitude;
+            float z = Random.Range(-1f, 1f) * shakeMagnitude;
+
+            transform.position = new Vector3(
+                oldPos.x + x,
+                oldPos.y + y,
+                oldPos.z + z);
+
+            shakeMagnitude -= Time.deltaTime;
+            yield return null;
+        }
+        transform.position = oldPos;
+        yield return null;
+    }
 }

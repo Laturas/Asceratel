@@ -1483,6 +1483,7 @@ Transform:
   - {fileID: 620745187}
   - {fileID: 2050928117}
   - {fileID: 1292238700}
+  - {fileID: 1538381547}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6020,7 +6021,6 @@ MonoBehaviour:
   fill: {fileID: 2011473058}
   movementWarning: {fileID: 1055974536}
   thePartWhereItKillsYou: {fileID: 379445097}
-  totalNoise: 0
 --- !u!95 &1055974536
 Animator:
   serializedVersion: 4
@@ -9272,6 +9272,66 @@ Transform:
   m_Father: {fileID: 440044608}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: -180, z: -17.916016}
+--- !u!1 &1538381546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538381547}
+  - component: {fileID: 1538381549}
+  - component: {fileID: 1538381548}
+  m_Layer: 0
+  m_Name: Sudden Stop Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538381547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538381546}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 459.48, y: -460.74, z: 191.34}
+  m_LocalScale: {x: 15.741207, y: 0.40322784, z: 15.913916}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 310973630}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1538381548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538381546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbd0337049c7f44686bb81b9a65c4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerSO: {fileID: 11400000, guid: 59e8e5b108508864baddf4a95d19c5c8, type: 2}
+  optionalGameObject: {fileID: 1577496640}
+--- !u!65 &1538381549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538381546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1552183132
 GameObject:
   m_ObjectHideFlags: 0
@@ -14580,15 +14640,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 469.8
+      value: 458.51
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -594.793
+      value: -302.13
       objectReference: {fileID: 0}
     - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 663.4
+      value: 198.9
       objectReference: {fileID: 0}
     - target: {fileID: 3076669273981140295, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: noiseMeter

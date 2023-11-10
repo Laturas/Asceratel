@@ -5,10 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TriggersScriptableObject", menuName = "ScriptableObjects/Triggers Scriptable Object")] 
 public class TriggersScriptableObject : ScriptableObject
 {
-    private ManagerOfScenes sm;
+    private ManagerOfScenes sceneManager;
+
+    /* This used to be spread across 7 scripts. Trust me, this is the better alternative*/
     public void triggerEntered(string triggerName, GameObject passedGO)
     {
-        if (sm == null) {passedGO.TryGetComponent<ManagerOfScenes>(out sm);}
+        // There is only one scene manager, so if we assign it once it will always be valid
+        if (sceneManager == null && passedGO != null) {passedGO.TryGetComponent<ManagerOfScenes>(out sceneManager);}
 
         switch (triggerName)
         {
@@ -24,14 +27,20 @@ public class TriggersScriptableObject : ScriptableObject
                 doorAnimator.SetTrigger("CloseDoor");
                 break;
             case "Graveyard Unloading Zone":
-                sm.UnloadGraveyard();
+                sceneManager.UnloadGraveyard();
                 break;
             case "Lava Caverns Loading Zone":
-                sm.LoadLavaZone();
+                sceneManager.LoadLavaZone();
                 break;
             case "Amber Eyes Trigger":
                 Animator amberEyeAnimator = passedGO.GetComponent<Animator>();
                 amberEyeAnimator.SetTrigger("CloseEyes");
+                break;
+            case "City Loading Trigger":
+                sceneManager.LoadCity();
+                break;
+            case "Watchers Trigger":
+                Instantiate(passedGO);
                 break;
             default:
                 break;

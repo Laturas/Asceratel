@@ -25,9 +25,9 @@ public class NoiseMeter : MonoBehaviour
     [SerializeField] private Animator movementWarning;
     [SerializeField] private ThePartWhereItKillsYou thePartWhereItKillsYou;
 
-    //*****READ ONLY*****//
-    public int totalNoise;
-    //*******************//
+    public int totalNoise { get; private set; }
+
+
     public void normalMovement(bool activity)
     {
         normalMovementActive = activity;
@@ -48,29 +48,29 @@ public class NoiseMeter : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Welcome to hell
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) 
-        {
-            normalMovementActive = true;
-        }
-        else 
-        {
-            normalMovementActive = false;
-        }
+        normalMovementActive = (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S));
+        
+        EvaluateTotalNoise();
 
+        slider.value = totalNoise;
+        fill.color = gradient.Evaluate(slider.normalizedValue);
+    }
+
+    private void EvaluateTotalNoise()
+    {
         // Normal Movement
         if (normalMovementActive) 
         {
             if (noiseDueToNormalMovement < 200)
             {
-                noiseDueToNormalMovement = noiseDueToNormalMovement + 20;
+                noiseDueToNormalMovement += 20;
             }
         } 
         else 
         {
             if (noiseDueToNormalMovement > 0)
             {
-                noiseDueToNormalMovement = noiseDueToNormalMovement - 2;
+                noiseDueToNormalMovement -= 2;
             }
         }
         // Speeder Movement
@@ -78,14 +78,14 @@ public class NoiseMeter : MonoBehaviour
         {
             if (noiseDueToSpeederMovement < 200)
             {
-                noiseDueToSpeederMovement = noiseDueToSpeederMovement + 20;
+                noiseDueToSpeederMovement += 20;
             }
         } 
         else 
         {
             if (noiseDueToSpeederMovement > 0)
             {
-                noiseDueToSpeederMovement = noiseDueToSpeederMovement - 2;
+                noiseDueToSpeederMovement -= 2;
             }
         }
         // Camera Noise
@@ -93,19 +93,17 @@ public class NoiseMeter : MonoBehaviour
         {
             if (noiseDueToCamera < 400)
             {
-                noiseDueToCamera = noiseDueToCamera + 100;
+                noiseDueToCamera += 100;
             }
         } 
         else 
         {
             if (noiseDueToCamera > 0)
             {
-                noiseDueToCamera = noiseDueToCamera - 2;
+                noiseDueToCamera -= 2;
             }
         }
         totalNoise = noiseDueToNormalMovement + noiseDueToSpeederMovement + noiseDueToCamera;
-        slider.value = totalNoise;
-        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
     public void TriggerEnemy()

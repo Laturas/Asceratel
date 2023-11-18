@@ -17,19 +17,20 @@ public class InGameCam : MonoBehaviour
     void Start()
     {
         LastImage = new Texture2D(CameraRT.width, CameraRT.height, CameraRT.graphicsFormat, UnityEngine.Experimental.Rendering.TextureCreationFlags.None);
-        Graphics.CopyTexture(blackImage, LastImage);
+        LastTakenImage.color = new Color(0, 0, 0);
         LastTakenImage.texture = blackImage;
     }
 
     public void TakePicture()
     {
         Graphics.CopyTexture(CameraRT, LastImage);
+        LastTakenImage.color = new Color(1, 1, 1);
         LastTakenImage.texture = LastImage;
         postProcessingManager.CameraPostProcessingSet(false);
     }
     public void blackOutScreen()
     {
-        Graphics.CopyTexture(blackImage, LastImage);
+        LastTakenImage.color = new Color(0, 0, 0);
         LastTakenImage.texture = blackImage;
     }
 }

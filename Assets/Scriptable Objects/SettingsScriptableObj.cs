@@ -8,11 +8,6 @@ public class SettingsScriptableObj : ScriptableObject
     [SerializeField] private float sensitivity;
     [SerializeField] private float brightness;
 
-    void Start()
-    {
-        sensitivity = 500F;
-    }
-
     public void UpdateSetting(float val, string slider)
     {
         switch (slider)
@@ -27,6 +22,12 @@ public class SettingsScriptableObj : ScriptableObject
                 Debug.LogError("A slider update has been called when no such slider exists!");
                 break;
         }
+    }
+
+    public void DefaultSettings()
+    {
+        sensitivity = 500F;
+        brightness = 1F;
     }
 
     public float getSensitivity()

@@ -26,7 +26,7 @@ public class CameraLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        settings.UpdateSetting(500F, "Sensitivity Slider");
+        settings.DefaultSettings();
     }
 
     // Update is called once per frame

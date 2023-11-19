@@ -47,6 +47,9 @@ public class TriggersScriptableObject : ScriptableObject
                 Camera.main.GetComponent<CameraLook>().shakeCam();
                 passedGO.GetComponent<ElevatorSceneTrigger>().DisableElevator();
                 break;
+            case "Hallucination Trigger":
+                passedGO.GetComponent<Flashback>().BeginSequence();
+                break;
             default:
                 break;
         }

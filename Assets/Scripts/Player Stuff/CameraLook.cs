@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class CameraLook : MonoBehaviour
 {
@@ -8,6 +11,9 @@ public class CameraLook : MonoBehaviour
     private float Ysensitivity;
     [SerializeField] private SettingsScriptableObj settings;
     [SerializeField] private CameraInfoScriptableObject camInfo;
+    [SerializeField] private Volume postProcessorVolume;
+
+    private ColorAdjustments colorAdj;
 
     private float xRotation;
     private float yRotation;
@@ -20,13 +26,14 @@ public class CameraLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        settings.updateSensitivity(500F);
+        settings.UpdateSetting(500F, "Sensitivity Slider");
     }
 
     // Update is called once per frame
     void Update()
     {
         SetSensitivity(settings.getSensitivity());
+        SetBrightness(settings.GetBrightness());
 
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * Xsensitivity;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * Ysensitivity;
@@ -39,6 +46,18 @@ public class CameraLook : MonoBehaviour
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
 
         camInfo.setRotValues(transform.rotation.eulerAngles.x);
+    }
+
+    public void SetBrightness(float brightness)
+    {
+        if (colorAdj == null && postProcessorVolume.profile.TryGet<ColorAdjustments>(out colorAdj))
+        {
+            colorAdj.postExposure.value = brightness;
+        }
+        else if (colorAdj != null)
+        {
+            colorAdj.postExposure.value = brightness;
+        }
     }
 
     public void SetSensitivity(float sensitive)
@@ -60,9 +79,9 @@ public class CameraLook : MonoBehaviour
 
         while (shakeMagnitude > 0f)
         {
-            float x = Random.Range(-1f, 1f) * shakeMagnitude;
-            float y = Random.Range(-1f, 1f) * shakeMagnitude;
-            float z = Random.Range(-1f, 1f) * shakeMagnitude;
+            float x = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
+            float y = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
+            float z = UnityEngine.Random.Range(-1f, 1f) * shakeMagnitude;
 
             transform.position = new Vector3(
                 oldPos.x + x,

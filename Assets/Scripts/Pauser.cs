@@ -7,13 +7,13 @@ public class Pauser : MonoBehaviour
     private bool paused;
 
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject SensitivitySlider;
+    [SerializeField] private GameObject settingsMenu;
 
     void PauseGame()
     {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        SensitivitySlider.SetActive(true);
+        
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -21,9 +21,20 @@ public class Pauser : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
-        SensitivitySlider.SetActive(false);
+        settingsMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    public void Settings()
+    {
+        pauseMenu.SetActive(false);
+        settingsMenu.SetActive(true);
+    }
+    public void CloseSettings()
+    {
+        pauseMenu.SetActive(true);
+        settingsMenu.SetActive(false);
     }
 
     // Update is called once per frame

@@ -14638,6 +14638,10 @@ PrefabInstance:
       propertyPath: speederBoost
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3076669272755845862, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
+      propertyPath: postProcessorVolume
+      value: 
+      objectReference: {fileID: 477876695}
     - target: {fileID: 3076669272755845863, guid: 21e29a31a7f99a645a056bf489c5fdae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 458.51

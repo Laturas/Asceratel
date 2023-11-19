@@ -17,13 +17,14 @@ public class Pauser : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-    void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
         settingsMenu.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        paused = false;
     }
 
     public void Settings()

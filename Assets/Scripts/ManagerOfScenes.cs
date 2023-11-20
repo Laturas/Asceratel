@@ -7,7 +7,7 @@ public class ManagerOfScenes : MonoBehaviour
 {
     private int sceneToLoad;
     private int sceneToUnload;
-    [SerializeField] private int activeScene;
+    private int activeScene;
     [SerializeField] private int initialLevel;
     [SerializeField] private GameObject menuUi;
     [SerializeField] private GameObject version;

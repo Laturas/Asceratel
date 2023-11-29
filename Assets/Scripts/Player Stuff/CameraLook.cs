@@ -12,6 +12,7 @@ public class CameraLook : MonoBehaviour
     [SerializeField] private SettingsScriptableObj settings;
     [SerializeField] private CameraInfoScriptableObject camInfo;
     [SerializeField] private Volume postProcessorVolume;
+    public GameObject hallCam;
 
     private ColorAdjustments colorAdj;
 
@@ -44,6 +45,7 @@ public class CameraLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        hallCam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
 
         camInfo.setRotValues(transform.rotation.eulerAngles.x);
     }

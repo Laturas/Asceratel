@@ -49,6 +49,7 @@ public class TriggersScriptableObject : ScriptableObject
                 break;
             case "Hallucination Trigger":
                 passedGO.GetComponent<Flashback>().BeginSequence();
+                Camera.main.GetComponent<CameraLook>().hallCam.GetComponent<HallucinatingCamera>().BeginSeq();
                 break;
             default:
                 break;
